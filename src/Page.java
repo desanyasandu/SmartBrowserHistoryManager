@@ -4,7 +4,6 @@ public class Page {
     int visitCount;
     boolean isBookmarked;
 
-    // Doubly Linked List pointers
     Page prev;
     Page next;
 

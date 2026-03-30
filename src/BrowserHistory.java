@@ -12,9 +12,7 @@ public class BrowserHistory {
         this.totalVisits = 0;
     }
 
-    // ═══════════════════════════════
-    // 1. VISIT
-    // ═══════════════════════════════
+
     public void visit(String url, String title) {
 
         if (incognitoMode) {
@@ -47,9 +45,7 @@ public class BrowserHistory {
         System.out.println("  [✓] Visited: " + newPage);
     }
 
-    // ═══════════════════════════════
-    // 2. BACK
-    // ═══════════════════════════════
+   
     public void goBack() {
         if (current == null) {
             System.out.println("  [!] No history yet.");
@@ -63,9 +59,6 @@ public class BrowserHistory {
         System.out.println("  [◀ BACK] Now viewing: " + current);
     }
 
-    // ═══════════════════════════════
-    // 3. FORWARD
-    // ═══════════════════════════════
     public void goForward() {
         if (current == null) {
             System.out.println("  [!] No history yet.");
@@ -79,9 +72,7 @@ public class BrowserHistory {
         System.out.println("  [▶ FORWARD] Now viewing: " + current);
     }
 
-    // ═══════════════════════════════
-    // 4. SHOW_HISTORY
-    // ═══════════════════════════════
+   
     public void showHistory() {
         if (head == null) {
             System.out.println("  [!] History is empty.");
@@ -113,9 +104,7 @@ public class BrowserHistory {
         System.out.println();
     }
 
-    // ═══════════════════════════════
-    // 5. DELETE_PAGE
-    // ═══════════════════════════════
+  
     public void deletePage(String url) {
         Page target = findPage(url);
         if (target == null) {
@@ -134,9 +123,6 @@ public class BrowserHistory {
         System.out.println("  [✓] Deleted: " + url);
     }
 
-    // ═══════════════════════════════
-    // 6. BOOKMARK (Novelty 1)
-    // ═══════════════════════════════
     public void toggleBookmark() {
         if (current == null) {
             System.out.println("  [!] No page currently open.");
@@ -149,9 +135,6 @@ public class BrowserHistory {
             System.out.println("  [☆] Bookmark removed: " + current.url);
     }
 
-    // ═══════════════════════════════
-    // 7. SHOW_BOOKMARKS (Novelty 1)
-    // ═══════════════════════════════
     public void showBookmarks() {
         System.out.println("\n  ════ BOOKMARKS ════");
         Page temp = head;
@@ -168,9 +151,7 @@ public class BrowserHistory {
         System.out.println();
     }
 
-    // ═══════════════════════════════
-    // 8. INCOGNITO (Novelty 2)
-    // ═══════════════════════════════
+
     public void toggleIncognito() {
         incognitoMode = !incognitoMode;
         if (incognitoMode)
@@ -179,9 +160,6 @@ public class BrowserHistory {
             System.out.println("  [🔓 Incognito OFF] History recording resumed.");
     }
 
-    // ═══════════════════════════════
-    // 9. CLEAR
-    // ═══════════════════════════════
     public void clearHistory() {
         head = null;
         current = null;
@@ -189,9 +167,6 @@ public class BrowserHistory {
         System.out.println("  [✓] History cleared.");
     }
 
-    // ═══════════════════════════════
-    // 10. STATS (Novelty 3)
-    // ═══════════════════════════════
     public void showStats() {
         if (head == null) {
             System.out.println("  [!] No history.");
@@ -218,9 +193,6 @@ public class BrowserHistory {
         System.out.println();
     }
 
-    // ═══════════════════════════════
-    // PRIVATE HELPERS
-    // ═══════════════════════════════
     private void appendPage(Page page) {
         if (head == null) {
             head = page;
